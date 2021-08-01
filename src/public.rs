@@ -136,7 +136,11 @@ impl PublicKey {
         let mut bits: [u8; 32] = [0u8; 32];
         bits.copy_from_slice(&bytes[..32]);
 
-        let compressed = CompressedEdwardsY(bits);
+        Self::from_bytes_fixed(bits)
+    }
+
+    pub fn from_bytes_fixed(bytes: [u8; PUBLIC_KEY_LENGTH]) -> Result<PublicKey, SignatureError> {
+        let compressed = CompressedEdwardsY(bytes);
         let point = compressed
             .decompress()
             .ok_or(InternalError::PointDecompressionError)?;

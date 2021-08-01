@@ -13,9 +13,9 @@
 use rand::{CryptoRng, RngCore};
 
 #[cfg(feature = "serde")]
-use serde::de::Error as SerdeError;
+use serde_crate::de::Error as SerdeError;
 #[cfg(feature = "serde")]
-use serde::{Deserialize, Deserializer, Serialize, Serializer};
+use serde_crate::{Deserialize, Deserializer, Serialize, Serializer};
 #[cfg(feature = "serde")]
 use serde_bytes::{Bytes as SerdeBytes, ByteBuf as SerdeByteBuf};
 

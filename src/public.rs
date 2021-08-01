@@ -139,6 +139,40 @@ impl PublicKey {
         Self::from_bytes_fixed(bits)
     }
 
+    /// Construct a `PublicKey` from a fixed-size array of bytes.
+    ///
+    /// # Warning
+    ///
+    /// The caller is responsible for ensuring that the bytes passed into this
+    /// method actually represent a `curve25519_dalek::curve::CompressedEdwardsY`
+    /// and that said compressed point is actually a point on the curve.
+    ///
+    /// # Example
+    ///
+    /// ```
+    /// use ed25519_dalek::PublicKey;
+    /// use ed25519_dalek::PUBLIC_KEY_LENGTH;
+    /// use ed25519_dalek::SignatureError;
+    ///
+    /// # fn doctest() -> Result<PublicKey, SignatureError> {
+    /// let public_key_bytes: [u8; PUBLIC_KEY_LENGTH] = [
+    ///    215,  90, 152,   1, 130, 177,  10, 183, 213,  75, 254, 211, 201, 100,   7,  58,
+    ///     14, 225, 114, 243, 218, 166,  35,  37, 175,   2,  26, 104, 247,   7,   81, 26];
+    ///
+    /// let public_key = PublicKey::from_bytes_fixed(public_key_bytes)?;
+    /// #
+    /// # Ok(public_key)
+    /// # }
+    /// #
+    /// # fn main() {
+    /// #     doctest();
+    /// # }
+    /// ```
+    ///
+    /// # Returns
+    ///
+    /// A `Result` whose okay value is an EdDSA `PublicKey` or whose error value
+    /// is an `SignatureError` describing the error that occurred.
     pub fn from_bytes_fixed(bytes: [u8; PUBLIC_KEY_LENGTH]) -> Result<PublicKey, SignatureError> {
         let compressed = CompressedEdwardsY(bytes);
         let point = compressed

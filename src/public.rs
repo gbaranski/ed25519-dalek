@@ -100,8 +100,6 @@ impl PublicKey {
     /// # Example
     ///
     /// ```
-    /// # extern crate ed25519_dalek;
-    /// #
     /// use ed25519_dalek::PublicKey;
     /// use ed25519_dalek::PUBLIC_KEY_LENGTH;
     /// use ed25519_dalek::SignatureError;

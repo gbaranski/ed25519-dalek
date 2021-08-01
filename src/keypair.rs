@@ -95,9 +95,6 @@ impl Keypair {
     /// # Example
     ///
     /// ```
-    /// extern crate rand;
-    /// extern crate ed25519_dalek;
-    ///
     /// # #[cfg(feature = "std")]
     /// # fn main() {
     ///
@@ -153,9 +150,6 @@ impl Keypair {
     /// # Examples
     ///
     /// ```
-    /// extern crate ed25519_dalek;
-    /// extern crate rand;
-    ///
     /// use ed25519_dalek::Digest;
     /// use ed25519_dalek::Keypair;
     /// use ed25519_dalek::Sha512;
@@ -200,9 +194,6 @@ impl Keypair {
     /// your own!):
     ///
     /// ```
-    /// # extern crate ed25519_dalek;
-    /// # extern crate rand;
-    /// #
     /// # use ed25519_dalek::Digest;
     /// # use ed25519_dalek::Keypair;
     /// # use ed25519_dalek::Signature;
@@ -277,9 +268,6 @@ impl Keypair {
     /// # Examples
     ///
     /// ```
-    /// extern crate ed25519_dalek;
-    /// extern crate rand;
-    ///
     /// use ed25519_dalek::Digest;
     /// use ed25519_dalek::Keypair;
     /// use ed25519_dalek::Signature;

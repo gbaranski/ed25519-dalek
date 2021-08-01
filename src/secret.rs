@@ -74,8 +74,6 @@ impl SecretKey {
     /// # Example
     ///
     /// ```
-    /// # extern crate ed25519_dalek;
-    /// #
     /// use ed25519_dalek::SecretKey;
     /// use ed25519_dalek::SECRET_KEY_LENGTH;
     /// use ed25519_dalek::SignatureError;
@@ -121,9 +119,6 @@ impl SecretKey {
     /// # Example
     ///
     /// ```
-    /// extern crate rand;
-    /// extern crate ed25519_dalek;
-    ///
     /// # #[cfg(feature = "std")]
     /// # fn main() {
     /// #
@@ -143,9 +138,6 @@ impl SecretKey {
     /// Afterwards, you can generate the corresponding public:
     ///
     /// ```
-    /// # extern crate rand;
-    /// # extern crate ed25519_dalek;
-    /// #
     /// # fn main() {
     /// #
     /// # use rand::rngs::OsRng;
@@ -248,10 +240,6 @@ impl<'a> From<&'a SecretKey> for ExpandedSecretKey {
     /// # Examples
     ///
     /// ```
-    /// # extern crate rand;
-    /// # extern crate sha2;
-    /// # extern crate ed25519_dalek;
-    /// #
     /// # fn main() {
     /// #
     /// use rand::rngs::OsRng;
@@ -294,10 +282,6 @@ impl ExpandedSecretKey {
     /// # Examples
     ///
     /// ```
-    /// # extern crate rand;
-    /// # extern crate sha2;
-    /// # extern crate ed25519_dalek;
-    /// #
     /// # #[cfg(feature = "std")]
     /// # fn main() {
     /// #
@@ -334,10 +318,6 @@ impl ExpandedSecretKey {
     /// # Examples
     ///
     /// ```
-    /// # extern crate rand;
-    /// # extern crate sha2;
-    /// # extern crate ed25519_dalek;
-    /// #
     /// # use ed25519_dalek::{ExpandedSecretKey, SignatureError};
     /// #
     /// # #[cfg(feature = "std")]

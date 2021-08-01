@@ -10,9 +10,8 @@
 //! Batch signature verification.
 
 #[cfg(feature = "alloc")]
-extern crate alloc;
-#[cfg(feature = "alloc")]
 use alloc::vec::Vec;
+
 #[cfg(all(not(feature = "alloc"), feature = "std"))]
 use std::vec::Vec;
 
@@ -193,9 +192,6 @@ fn zero_rng() -> ZeroRng {
 /// # Examples
 ///
 /// ```
-/// extern crate ed25519_dalek;
-/// extern crate rand;
-///
 /// use ed25519_dalek::verify_batch;
 /// use ed25519_dalek::Keypair;
 /// use ed25519_dalek::PublicKey;
